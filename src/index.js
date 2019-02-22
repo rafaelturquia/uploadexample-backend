@@ -7,8 +7,6 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
-
 
 // Database setup
 
@@ -26,4 +24,4 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')
 
 app.use(require('./routes'));
 
-app.listen(port);
+app.listen(process.env.PORT || 3000);
